@@ -1,9 +1,18 @@
-import React from "react";
+import React, { memo } from "react";
+import { Container, Title, Input } from "./styles";
 
-import { Container } from "./styles";
-
-const Time = () => {
-  return <Container></Container>;
+const Time = ({ setCurrentTime }) => {
+  return (
+    <Container>
+      <Title>Tempo/Min</Title>
+      <Input
+        type='number'
+        min={1}
+        required
+        onChange={(e) => setCurrentTime(parseInt(e && e.target.value) || 0)}
+      />
+    </Container>
+  );
 };
 
-export default Time;
+export default memo(Time);

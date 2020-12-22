@@ -26,14 +26,14 @@ export default createGlobalStyle`
 `;
 
 export const PageContainer = styled.div`
-  margin: 60px 0 0;
+  margin: 120px 0 0;
   width: 100%;
   min-height: 100%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 export const ResponsiveContainer = styled.div`

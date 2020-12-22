@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Home, Plans } from "./pages";
+import { HomePage, PlansPage } from "./pages";
 
 const Routes = () => (
   <Router>
     <Switch>
       <Route exact path='/'>
-        <Home />
+        <HomePage />
       </Route>
       <Route exact path='/planos'>
-        <Plans />
+        <PlansPage />
       </Route>
     </Switch>
   </Router>

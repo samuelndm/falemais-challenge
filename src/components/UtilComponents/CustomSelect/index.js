@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import Select from "react-select";
-import { Container } from "./styles";
+import { Container, Title } from "./styles";
 
-const Options = ({ options, onChange }) => {
+const CustomSelect = ({ options, title, onChange }) => {
   const [customOptions, setCustomOptions] = useState([]);
 
   useEffect(() => {
@@ -23,13 +23,16 @@ const Options = ({ options, onChange }) => {
   if (!options) return null;
   return (
     <Container>
+      <Title>{title || ""}</Title>
       <Select
         options={customOptions}
+        placeholder='Selecione uma opção'
         isDisabled={!options.length}
-        onChange={(e) => onChange(e.value.toString())}
+        isClearable={true}
+        onChange={(e) => onChange((e && e.value) || "")}
       />
     </Container>
   );
 };
 
-export default Options;
+export default memo(CustomSelect);

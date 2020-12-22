@@ -1,9 +1,19 @@
 import React from "react";
+import { Container, Title, Types } from "./styles";
+import Plan from "./Plan";
 
-import { Container } from "./styles";
-
-const Plans = () => {
-  return <Container></Container>;
+const Plans = ({ plans }) => {
+  if (!plans || !plans.length) return null;
+  return (
+    <Container>
+      <Title>Selecione um plano</Title>
+      <Types>
+        {plans.map((plan) => (
+          <Plan plan={plan} key={`plan-${plan.id}`} />
+        ))}
+      </Types>
+    </Container>
+  );
 };
 
 export default Plans;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Footer, Simulation } from "../../components";
+import { Navbar, Footer, Plans, Simulation } from "../../components";
 import { PageContainer } from "../../styles/GlobalStyles";
 
 const codes = [
@@ -49,14 +49,36 @@ const codes = [
   },
 ];
 
-const Plans = () => {
+const plans = [
+  {
+    id: 1,
+    title: "FaleMais 30",
+    freeTime: 30,
+    color: "#26C740",
+  },
+  {
+    id: 2,
+    title: "FaleMais 60",
+    freeTime: 60,
+    color: "#0EA2D0",
+  },
+  {
+    id: 3,
+    title: "FaleMais 120",
+    freeTime: 120,
+    color: "#FFB800",
+  },
+];
+
+const PlansPage = () => {
   return (
     <PageContainer>
       <Navbar />
+      <Plans plans={plans} />
       <Simulation codes={codes} />
       <Footer />
     </PageContainer>
   );
 };
 
-export default Plans;
+export default PlansPage;
