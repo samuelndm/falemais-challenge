@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 0 0 30px;
-  width: 7%;
+  width: 10%;
 
   @media screen and (max-width: 991px) {
     margin: 0;
@@ -18,8 +18,13 @@ export const Title = styled.h4`
   text-align: center;
 
   @media screen and (max-width: 991px) {
-    margin: 0;
-    width: 30%;
+    margin: 0 10px 0 0;
+    width: 100px;
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 575px) {
+    font-size: 12px;
   }
 `;
 

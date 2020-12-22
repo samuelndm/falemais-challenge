@@ -27,8 +27,8 @@ const CustomSelect = ({ options, title, onChange }) => {
       <Select
         options={customOptions}
         placeholder='Selecione uma opção'
-        isDisabled={!options.length}
-        isClearable={true}
+        isDisabled={!customOptions.length}
+        isClearable
         onChange={(e) => onChange((e && e.value) || "")}
       />
     </Container>

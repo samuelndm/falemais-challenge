@@ -12,11 +12,12 @@ export const Container = styled.div`
   box-shadow: rgba(14, 14, 14, 0.15) 0px 10px 20px 0px;
   transform: scale(1.02) translate(0px, -6px);
   cursor: pointer;
+  background-color: ${({ isActive, color }) =>
+    isActive && color ? color : "transparent"};
 `;
 
 export const Content = styled.div`
   padding: 20px;
-  background-color: ${({ color }) => color || "transparent"};
   width: 100%;
   height: 100%;
   display: flex;
@@ -26,6 +27,7 @@ export const Content = styled.div`
   border-radius: 16px;
   color: #fff;
   font-weigth: bold;
+  background-color: ${({ color }) => color || "transparent"};
 `;
 
 export const Title = styled.h5`

@@ -26,7 +26,7 @@ export default createGlobalStyle`
 `;
 
 export const PageContainer = styled.div`
-  margin: 120px 0 0;
+  margin: 100px 0 0;
   width: 100%;
   min-height: 100%;
   max-width: 100%;

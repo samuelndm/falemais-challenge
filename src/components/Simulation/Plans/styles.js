@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 0 0 75px;
+  margin: 0 0 50px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@ export const Container = styled.div`
   justify-content: flex-start;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h3`
   margin: 0 0 20px;
 `;
 

@@ -1,61 +1,76 @@
 import React, { useEffect, useState } from "react";
-import { CustomSelect } from "../index";
-import { Container, Form, Options, ArrowIcon, Button } from "./styles";
-import Time from "./Time";
+import {
+  handleDestinations,
+  handleOrigins,
+  handlePlanCalc,
+  handleNoPlanCalc,
+  validateData,
+} from "../../utils/Simulation";
+import { usePlanContext } from "../../contexts/PlanProvider";
+import { Container, Title, Form, Button } from "./styles";
+import Inputs from "./Inputs";
+import Plans from "./Plans";
 
-const Simulation = ({ codes }) => {
+const Simulation = ({ codes, plans }) => {
   const [origins, setOrigins] = useState([]);
   const [destinations, setDestinations] = useState([]);
-  const [currentOrigin, setCurrentOrigin] = useState("");
-  const [currentDestination, setCurrentDestination] = useState("");
+  const [currentOriginCode, setCurrentOriginCode] = useState("");
+  const [currentDestinationCode, setCurrentDestinationCode] = useState("");
+  const [currentDestination, setCurrentDestination] = useState(null);
   const [currentTime, setCurrentTime] = useState(1);
-  const [currentPlan, setCurrentPlan] = useState("");
+  const { currentPlan } = usePlanContext();
 
   useEffect(() => {
-    setOrigins(codes.map(({ origin }) => origin));
+    setOrigins(handleOrigins(codes));
+    setDestinations(handleDestinations(codes, currentOriginCode));
+    setCurrentDestinationCode("");
+  }, [codes, currentOriginCode]);
 
-    if (currentOrigin) {
-      setDestinations(
-        codes.find(({ origin }) => `${origin}` === `${currentOrigin}`)
-          .destinations
-      );
-    } else {
-      setDestinations([]);
-    }
-
-    setCurrentDestination("");
-  }, [codes, currentOrigin]);
+  useEffect(() => {
+    setCurrentDestination(
+      destinations.find(
+        (destination) => `${destination.code}` === currentDestinationCode
+      )
+    );
+  }, [destinations, currentDestinationCode]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  };
 
-  console.log("currentTime", currentTime);
+    try {
+      validateData(currentDestination, currentTime, currentPlan);
+      const planPrice = handlePlanCalc(
+        currentDestination,
+        currentTime,
+        currentPlan
+      );
+      const noPlanPrice = handleNoPlanCalc(currentDestination, currentTime);
+
+      console.log("planPrice", planPrice);
+      console.log("noPlanPrice", noPlanPrice);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   if (!codes || !codes.length) return null;
   return (
     <Container>
+      <Title>Simule um plano</Title>
+
       <Form onSubmit={(e) => handleSubmit(e)}>
-        <Options>
-          <CustomSelect
-            options={origins}
-            title='Origem'
-            onChange={setCurrentOrigin}
-          />
+        <Inputs
+          origins={origins}
+          currentOriginCode={currentOriginCode}
+          setCurrentOriginCode={setCurrentOriginCode}
+          destinations={destinations.map(({ code }) => code)}
+          setCurrentDestinationCode={setCurrentDestinationCode}
+          currentTime={currentTime}
+          setCurrentTime={setCurrentTime}
+        />
 
-          <ArrowIcon className='fas fa-long-arrow-alt-right' />
+        <Plans plans={plans} />
 
-          <CustomSelect
-            options={destinations.map(({ code }) => code)}
-            title='Destino'
-            onChange={setCurrentDestination}
-            key={currentOrigin}
-          />
-
-          <ArrowIcon className='fas fa-long-arrow-alt-right' />
-
-          <Time currentTime={currentTime} setCurrentTime={setCurrentTime} />
-        </Options>
         <Button type='submit'>Calcular</Button>
       </Form>
     </Container>

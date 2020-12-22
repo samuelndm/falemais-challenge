@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Container, Title, Input } from "./styles";
 
-const Time = ({ setCurrentTime }) => {
+const TimeInput = ({ setCurrentTime }) => {
   return (
     <Container>
       <Title>Tempo/Min</Title>
@@ -15,4 +15,4 @@ const Time = ({ setCurrentTime }) => {
   );
 };
 
-export default memo(Time);
+export default memo(TimeInput);

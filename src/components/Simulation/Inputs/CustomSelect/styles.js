@@ -23,7 +23,12 @@ export const Title = styled.h4`
   text-align: center;
 
   @media screen and (max-width: 991px) {
-    margin: 0;
-    width: 30%;
+    margin: 0 10px 0 0;
+    width: 100px;
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 575px) {
+    font-size: 12px;
   }
 `;
