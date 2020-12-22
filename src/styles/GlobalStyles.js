@@ -14,7 +14,7 @@ export default createGlobalStyle`
     *, button, input, textarea {
         border: 0;
         outline: 0;
-        font-family: Montserrat, sans-serif;
+        font-family: Raleway, sans-serif;
         line-height: 20px;
     }
 
