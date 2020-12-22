@@ -4,7 +4,7 @@ import { ResponsiveContainer } from "../../styles/GlobalStyles";
 export const Container = styled.div`
   z-index: 10;
   width: auto;
-  height: 76px;
+  height: 60px;
   position: fixed;
   left: 0%;
   top: 0%;

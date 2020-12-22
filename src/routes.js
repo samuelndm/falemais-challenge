@@ -5,10 +5,10 @@ import { Home, Plans } from "./pages";
 const Routes = () => (
   <Router>
     <Switch>
-      <Route path='/'>
+      <Route exact path='/'>
         <Home />
       </Route>
-      <Route path='/planos'>
+      <Route exact path='/planos'>
         <Plans />
       </Route>
     </Switch>

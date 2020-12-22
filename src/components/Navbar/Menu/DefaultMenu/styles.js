@@ -9,3 +9,12 @@ export const Container = styled.div`
     display: none;
   }
 `;
+
+export const Separator = styled.div`
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  border: 1px solid #d85859;
+  transform: rotate(45deg);
+`;

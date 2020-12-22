@@ -4,8 +4,8 @@ import DefaultMenu from "./DefaultMenu";
 import MobileMenu from "./MobileMenu";
 
 const menu = [
-  { id: 1, url: "/", title: "Home" },
-  { id: 2, url: "/planos", title: "Planos" },
+  { id: 1, url: "/", title: "HOME" },
+  { id: 2, url: "/planos", title: "PLANOS" },
 ];
 
 const Menu = () => {
