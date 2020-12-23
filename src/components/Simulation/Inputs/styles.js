@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 0 0 60px;
+  margin: 0 0 80px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -9,7 +9,7 @@ export const Container = styled.div`
   justify-content: center;
 
   & > * {
-    width: 20%;
+    width: 22%;
   }
 
   & > i {

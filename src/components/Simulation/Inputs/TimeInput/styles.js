@@ -2,11 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 0 0 30px;
-  width: 10%;
 
   @media screen and (max-width: 991px) {
     margin: 0;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

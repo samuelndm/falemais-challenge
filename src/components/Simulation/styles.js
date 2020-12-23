@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { ResponsiveContainer } from "../../styles/GlobalStyles";
 
 export const Container = styled(ResponsiveContainer)`
-  margin: 120px auto 30px;
+  margin: 130px auto 30px;
 `;
 
 export const Title = styled.h1`
-  margin: 0 auto 90px;
+  margin: 0 auto 100px;
   width: 100%;
   text-align: center;
   font-size: 36px;
