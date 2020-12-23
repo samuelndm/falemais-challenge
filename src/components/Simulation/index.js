@@ -7,9 +7,11 @@ import {
   validateData,
 } from "../../utils/Simulation";
 import { usePlanContext } from "../../contexts/PlanProvider";
+import { useNotificationContext } from "../../contexts/NotificationProvider";
 import { Container, Title, Form, Button } from "./styles";
 import Inputs from "./Inputs";
 import Plans from "./Plans";
+import Prices from "./Prices";
 
 const Simulation = ({ codes, plans }) => {
   const [origins, setOrigins] = useState([]);
@@ -18,7 +20,10 @@ const Simulation = ({ codes, plans }) => {
   const [currentDestinationCode, setCurrentDestinationCode] = useState("");
   const [currentDestination, setCurrentDestination] = useState(null);
   const [currentTime, setCurrentTime] = useState(1);
+  const [planPrice, setPlanPrice] = useState(null);
+  const [noPlanPrice, setNoPlanPrice] = useState(null);
   const { currentPlan } = usePlanContext();
+  const { createNotification } = useNotificationContext();
 
   useEffect(() => {
     setOrigins(handleOrigins(codes));
@@ -39,17 +44,18 @@ const Simulation = ({ codes, plans }) => {
 
     try {
       validateData(currentDestination, currentTime, currentPlan);
-      const planPrice = handlePlanCalc(
-        currentDestination,
-        currentTime,
-        currentPlan
+      setPlanPrice(
+        handlePlanCalc(currentDestination, currentTime, currentPlan)
       );
-      const noPlanPrice = handleNoPlanCalc(currentDestination, currentTime);
-
-      console.log("planPrice", planPrice);
-      console.log("noPlanPrice", noPlanPrice);
+      setNoPlanPrice(handleNoPlanCalc(currentDestination, currentTime));
     } catch (err) {
-      console.error(err);
+      console.err("Error at simulation validation", err);
+
+      createNotification({
+        type: "error",
+        message: err.message,
+        time: 5000,
+      });
     }
   };
 
@@ -73,6 +79,8 @@ const Simulation = ({ codes, plans }) => {
 
         <Button type='submit'>Calcular</Button>
       </Form>
+
+      <Prices planPrice={planPrice} noPlanPrice={noPlanPrice} />
     </Container>
   );
 };

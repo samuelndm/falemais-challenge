@@ -8,9 +8,9 @@ const Plan = ({ plan }) => {
   if (!plan) return null;
   return (
     <Container
-      isActive={currentPlan.id === plan.id}
+      isActive={currentPlan && currentPlan.id === plan.id}
       color={plan.color}
-      onClick={(e) => setCurrentPlan(currentPlan.id !== plan.id ? plan : {})}
+      onClick={(e) => setCurrentPlan(plan)}
     >
       <Content color={plan.color}>
         <Title>{plan.title || ""}</Title>

@@ -35,4 +35,12 @@ export const handleNoPlanCalc = (destination, time) => {
   return `${destination.value * time}`;
 };
 
-export const validateData = (destination, time, plan) => {};
+export const validateData = (destination, time, plan) => {
+  if (!destination) {
+    throw new Error("Selecione um destino.");
+  } else if (!time) {
+    throw new Error("Insira o tempo em minutos.");
+  } else if (!plan) {
+    throw new Error("Escolha um plano.");
+  }
+};

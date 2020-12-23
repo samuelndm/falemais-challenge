@@ -5,7 +5,7 @@ const PlanContext = createContext();
 export const usePlanContext = () => useContext(PlanContext);
 
 const PlanProvider = ({ children }) => {
-  const [currentPlan, setCurrentPlan] = useState({});
+  const [currentPlan, setCurrentPlan] = useState(null);
 
   return (
     <PlanContext.Provider value={{ currentPlan, setCurrentPlan }}>

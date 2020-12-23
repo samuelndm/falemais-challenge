@@ -1,10 +1,13 @@
 import React from "react";
+import NotificationProvider from "./NotificationProvider";
 import PlanProvider from "./PlanProvider";
 
 const Providers = ({ children }) => {
   return (
     <>
-      <PlanProvider>{children}</PlanProvider>
+      <NotificationProvider>
+        <PlanProvider>{children}</PlanProvider>
+      </NotificationProvider>
     </>
   );
 };
