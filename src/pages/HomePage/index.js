@@ -1,12 +1,12 @@
 import React from "react";
-import { Navbar, Footer } from "../../components";
+import { Navbar, About } from "../../components";
 import { PageContainer } from "../../styles/GlobalStyles";
 
 const HomePage = () => {
   return (
     <PageContainer>
       <Navbar />
-      <Footer />
+      <About />
     </PageContainer>
   );
 };

@@ -14,7 +14,7 @@ const Plan = ({ plan }) => {
     >
       <Content color={plan.color}>
         <Title>{plan.title || ""}</Title>
-        <MinutesFree>{plan.freeTime || 0} minutos</MinutesFree>
+        <MinutesFree>{plan.free_time || 0} minutos</MinutesFree>
       </Content>
     </Container>
   );

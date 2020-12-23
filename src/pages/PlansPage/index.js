@@ -1,6 +1,6 @@
 import React from "react";
 import { PageContainer } from "../../styles/GlobalStyles";
-import { Navbar, Footer, Simulation } from "../../components";
+import { Navbar, Simulation } from "../../components";
 
 const codes = [
   {
@@ -53,22 +53,22 @@ const plans = [
   {
     id: 1,
     title: "FaleMais 30",
-    freeTime: 30,
-    taxAfterFreeTime: 10,
+    free_time: 30,
+    tax_after_free_time: 10,
     color: "#034078",
   },
   {
     id: 2,
     title: "FaleMais 60",
-    freeTime: 60,
-    taxAfterFreeTime: 10,
+    free_time: 60,
+    tax_after_free_time: 10,
     color: "#001F54",
   },
   {
     id: 3,
     title: "FaleMais 120",
-    freeTime: 120,
-    taxAfterFreeTime: 10,
+    free_time: 120,
+    tax_after_free_time: 10,
     color: "#0A1128",
   },
 ];
@@ -78,7 +78,6 @@ const PlansPage = () => {
     <PageContainer>
       <Navbar />
       <Simulation codes={codes} plans={plans} />
-      <Footer />
     </PageContainer>
   );
 };

@@ -18,17 +18,11 @@ export default createGlobalStyle`
         line-height: 20px;
     }
 
-    :root {
-        --primary-color: #2D348D;
-        --secondary-color: #efedf3;
-    }
-
 `;
 
 export const PageContainer = styled.div`
-  margin: 100px 0 0;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   max-width: 100%;
   display: flex;
   flex-direction: column;

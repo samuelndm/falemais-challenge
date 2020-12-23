@@ -49,7 +49,7 @@ const Simulation = ({ codes, plans }) => {
       );
       setNoPlanPrice(handleNoPlanCalc(currentDestination, currentTime));
     } catch (err) {
-      console.err("Error at simulation validation", err);
+      console.error("Error at simulation validation", err);
 
       createNotification({
         type: "error",

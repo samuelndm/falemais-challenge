@@ -17,12 +17,12 @@ export const handleDestinations = (codes, currentOriginCode) => {
 
 export const handlePlanCalc = (destination, time, plan) => {
   let price = 0;
-  const remainingTime = time - plan.freeTime;
+  const remainingTime = time - plan.free_time;
 
   if (remainingTime > 0) {
     const destinationPrice = remainingTime * destination.value;
-    const taxAfterFreeTime = plan.taxAfterFreeTime
-      ? plan.taxAfterFreeTime / 100 + 1
+    const taxAfterFreeTime = plan.tax_after_free_time
+      ? plan.tax_after_free_time / 100 + 1
       : 1;
 
     price += destinationPrice * taxAfterFreeTime;
