@@ -44,6 +44,7 @@ const Simulation = ({ codes, plans }) => {
 
     try {
       validateData(currentDestination, currentTime, currentPlan);
+
       setPlanPrice(
         handlePlanCalc(currentDestination, currentTime, currentPlan)
       );

@@ -25,43 +25,6 @@ export const Form = styled.form`
   justify-content: center;
 `;
 
-export const Inputs = styled.div`
-  margin: 0 0 60px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-
-  & > * {
-    width: 20%;
-  }
-
-  & > i {
-    width: 7%;
-  }
-
-  @media screen and (max-width: 991px) {
-    flex-direction: column;
-
-    & > * {
-      width: 100%;
-    }
-  }
-`;
-
-export const ArrowIcon = styled.i`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  color: #008dca;
-
-  @media screen and (max-width: 991px) {
-    display: none;
-  }
-`;
-
 export const Button = styled.button`
   padding: 8px 28px;
   display: inline-block;
