@@ -6,6 +6,7 @@ const TimeInput = ({ setCurrentTime }) => {
     <Container>
       <Title>Tempo/Min</Title>
       <Input
+        data-testid='inputId'
         type='number'
         min={1}
         required

@@ -5,7 +5,7 @@ import Plan from "./Plan";
 const Plans = ({ plans }) => {
   if (!plans || !plans.length) return null;
   return (
-    <Container>
+    <Container id='plansId'>
       <Title>Selecione um plano</Title>
       <Types>
         {plans.map((plan) => (

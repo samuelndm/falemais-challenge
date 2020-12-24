@@ -18,11 +18,12 @@ const Plan = ({ plan }) => {
   if (!plan) return null;
   return (
     <Container
+      id='planId'
       isActive={currentPlan && currentPlan.id === plan.id}
       color={plan.color}
       onClick={(e) => handleClick(e)}
     >
-      <Content color={plan.color}>
+      <Content data-testid='planContentId' color={plan.color}>
         <Title>{plan.title || ""}</Title>
         <MinutesFree>{plan.free_time || 0} minutos</MinutesFree>
       </Content>

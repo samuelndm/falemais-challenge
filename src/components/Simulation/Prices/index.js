@@ -5,16 +5,16 @@ import { Container, Price, Title, Value, Icon } from "./styles";
 const Prices = ({ planPrice, noPlanPrice }) => {
   if (!planPrice || !noPlanPrice) return null;
   return (
-    <Container>
+    <Container data-testid='pricesId' id='pricesId'>
       <Price>
         <Title className='smile'>Com FaleMais</Title>
-        <Value>{formatCurrency(planPrice)}</Value>
+        <Value data-testid='planPriceId'>{formatCurrency(planPrice)}</Value>
         <Icon className='fas fa-smile' />
       </Price>
 
       <Price>
         <Title className='frown'>Sem FaleMais</Title>
-        <Value>{formatCurrency(noPlanPrice)}</Value>
+        <Value data-testid='noPlanPriceId'>{formatCurrency(noPlanPrice)}</Value>
         <Icon className='fas fa-frown' />
       </Price>
     </Container>
