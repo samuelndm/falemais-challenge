@@ -1,4 +1,4 @@
-# Front-end challenger solution
+# Frontend challenger solution
 
 ## Available Scripts
 
