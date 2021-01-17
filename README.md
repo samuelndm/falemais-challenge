@@ -1,4 +1,4 @@
-# This is a solution to a frontend challenge
+## This is a solution with ReactJS to a frontend challenge
 
 ## Available Scripts
 
